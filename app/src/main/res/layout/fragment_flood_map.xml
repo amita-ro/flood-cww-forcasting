@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".FloodMap">
+
+
+
+    <com.esri.arcgisruntime.mapping.view.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/size"
+            android:layout_width="270dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="45dp"
+            app:hintTextColor="@android:color/transparent"
+            android:hint="ค้นหาจังหวัด"
+            app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/floodsearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_corner"
+                android:fontFamily="@font/ekkamai_bold"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/navy"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </com.esri.arcgisruntime.mapping.view.MapView>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/detailViewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/mapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
